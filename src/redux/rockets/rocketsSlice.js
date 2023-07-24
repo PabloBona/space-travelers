@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const formattedBooks = (data) => data.map((rocket) => ({
+const formattedRocketData = (data) => data.map((rocket) => ({
   id: rocket.id,
   rocketname: rocket.rocket_name,
   type: rocket.rocket_type,
@@ -12,7 +12,7 @@ export const getRocketData = createAsyncThunk('rockets/getRocketData', async () 
     const rocketsDataLink = 'https://api.spacexdata.com/v3/rockets';
     const response = await fetch(rocketsDataLink);
     const data = await response.json();
-    const formattedData = formattedBooks(data);
+    const formattedData = formattedRocketData(data);
     return formattedData;
   } catch (error) {
     throw new Error(error.message);
@@ -33,6 +33,7 @@ const rocketsSlice = createSlice({
     builder
       .addCase(getRocketData.pending, (state) => {
         state.isLoading = true;
+        state.error = false;
       })
       .addCase(getRocketData.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -40,9 +41,9 @@ const rocketsSlice = createSlice({
           state.rockets = action.payload;
         }
       })
-      .addCase(getRocketData.rejected, (state) => {
+      .addCase(getRocketData.rejected, (state, action) => {
         state.isLoading = false;
-        state.hasError = true;
+        state.error = action.error.message;
       });
   },
 });
