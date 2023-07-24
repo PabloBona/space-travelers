@@ -8,6 +8,7 @@ body {
 
 li a {
   color: #000;
+  text-decoration: none;
 }
 
 .planet {
@@ -16,4 +17,5 @@ li a {
 
 .active-style {
   color: rgb(111, 183, 188);
+  text-decoration: underline;
 }
