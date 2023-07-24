@@ -1,5 +1,6 @@
 import { applyMiddleware } from 'redux';
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import { configureStore } from '@reduxjs/toolkit';
 import dragonsSlice from './dragons/dragonsSlice';
 import missionSlice from './missions/missionSlice';
@@ -12,6 +13,6 @@ const store = configureStore({
     rockets: rocketsSlice,
   },
 },
-applyMiddleware(logger));
+applyMiddleware(thunk, logger));
 
 export default store;
