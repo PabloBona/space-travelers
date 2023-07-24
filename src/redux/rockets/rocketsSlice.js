@@ -10,17 +10,7 @@ const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
-    rocketsLoading(state) {
-      if (state.status === 'idle') {
-        state.status = 'pending';
-      }
-    },
-    rocketsReceived(state, action) {
-      if (state.status === 'pending') {
-        state.status = 'idle';
-        state.rockets = action.payload;
-      }
-    },
+
   },
 });
 

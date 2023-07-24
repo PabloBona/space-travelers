@@ -10,17 +10,7 @@ const missionsSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
-    missionsLoading(state) {
-      if (state.status === 'idle') {
-        state.status = 'pending';
-      }
-    },
-    missionsReceived(state, action) {
-      if (state.status === 'pending') {
-        state.status = 'idle';
-        state.missions = action.payload;
-      }
-    },
+
   },
 });
 

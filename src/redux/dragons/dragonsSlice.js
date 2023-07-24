@@ -10,17 +10,7 @@ const dragonsSlice = createSlice({
   name: 'dragons',
   initialState,
   reducers: {
-    dragonsLoading(state) {
-      if (state.status === 'idle') {
-        state.status = 'pending';
-      }
-    },
-    dragonsReceived(state, action) {
-      if (state.status === 'pending') {
-        state.status = 'idle';
-        state.dragons = action.payload;
-      }
-    },
+
   },
 });
 
