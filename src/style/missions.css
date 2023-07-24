@@ -1,3 +1,9 @@
-body {
-  font-family: sans-serif;
+.missions-table {
+  margin: 0 auto;
+  width: 95vw;
+  align-items: center;
+}
+
+.description {
+  width: 62vw;
 }
