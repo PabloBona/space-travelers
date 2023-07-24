@@ -17,4 +17,5 @@ li a {
 
 .active-style {
   color: rgb(111, 183, 188);
+  text-decoration: underline;
 }
