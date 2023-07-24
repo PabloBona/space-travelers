@@ -8,11 +8,17 @@ import rocketsSlice from './rockets/rocketsSlice';
 
 const store = configureStore({
   reducer: {
-    dragon: dragonsSlice,
+    dragons: dragonsSlice,
     missions: missionSlice,
     rockets: rocketsSlice,
   },
 },
 applyMiddleware(thunk, logger));
+
+const selectMissions = (store) => store.missions;
+const selectRockets = (store) => store.rockets;
+const selectDragons = (store) => store.dragons;
+
+export { selectMissions, selectRockets, selectDragons };
 
 export default store;
