@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   rockets: [],
-  status: 'idle',
+  isLoading: true,
   error: null,
 };
 

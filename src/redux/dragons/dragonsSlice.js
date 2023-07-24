@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   dragons: [],
-  status: 'idle',
+  isLoading: true,
   error: null,
 };
 

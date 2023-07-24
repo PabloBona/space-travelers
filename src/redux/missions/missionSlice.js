@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   missions: [],
-  status: 'idle',
+  isLoading: true,
   error: null,
 };
 
