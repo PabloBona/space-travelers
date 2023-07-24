@@ -1,7 +1,7 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { setDragonsData, setDragonsError } from './dragonsSlice';
 
-const fetchDragonsData = () => async (dispatch) => {
+const fetchDragonsData = createAsyncThunk('dragons/fetchDragonsData', async () => {
   try {
     const response = await axios.get('https://api.spacexdata.com/v3/dragons');
     const dragonsData = response.data.map((dragon) => ({
@@ -12,10 +12,10 @@ const fetchDragonsData = () => async (dispatch) => {
       description: dragon.description,
       first_flight: dragon.first_flight,
     }));
-    dispatch(setDragonsData(dragonsData));
+    return dragonsData;
   } catch (error) {
-    dispatch(setDragonsError('Failed to fetch dragons data. Please try again later.'));
+    throw new Error('Failed to fetch dragons data. Please try again later.');
   }
-};
+});
 
 export default fetchDragonsData;
