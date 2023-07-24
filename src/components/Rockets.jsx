@@ -1,8 +1,7 @@
-import React from 'react';
-import '../style/rockets.css';
-
 const Rockets = () => (
-  <div className="container">Rockets</div>
+  <div className="container">
+    
+  </div>
 );
 
 export default Rockets;
