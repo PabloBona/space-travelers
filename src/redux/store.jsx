@@ -16,9 +16,8 @@ const store = configureStore({
 applyMiddleware(thunk, logger));
 
 const selectMissions = (store) => store.missions;
-const selectRockets = (store) => store.rockets;
 const selectDragons = (store) => store.dragons;
 
-export { selectMissions, selectRockets, selectDragons };
+export { selectMissions, selectDragons };
 
 export default store;
