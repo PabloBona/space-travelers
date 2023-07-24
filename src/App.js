@@ -1,5 +1,7 @@
 import React from 'react';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import {
+  Route, Routes, NavLink,
+} from 'react-router-dom';
 import Dragons from './components/Dragons';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
@@ -17,17 +19,18 @@ function App() {
           <div>
             <ul className="navbar-nav mr-auto gap-3">
               <li className="nav-item">
-                <NavLink to="/" activeClassName="active-style">Rockets</NavLink>
+                <NavLink to="/" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>Rockets</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/missions" activeClassName="active-style">Missions</NavLink>
+                <NavLink to="/missions" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>Missions</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/dragons" activeClassName="active-style">Dragons</NavLink>
+                <NavLink to="/dragons" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>Dragons</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/myprofile" activeClassName="active-style">My Profile</NavLink>
+                <NavLink to="/myprofile" className={(navData) => (navData.isActive ? 'active-style' : 'none')}>My Profile </NavLink>
               </li>
+
             </ul>
           </div>
         </div>
