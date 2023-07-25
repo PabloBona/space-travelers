@@ -6,11 +6,7 @@ const DragonCard = ({ dragon }) => (
   <div className="dragon-card rounded my-3" key={dragon.id}>
     <div className="row">
       <div className="col-sm-12 col-md-5">
-        {dragon.name === 'Dragon 1' ? (
-          <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
-        ) : (
-          <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
-        )}
+        <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
       </div>
       <div className="col-sm-12 col-md-7">
         <div className="py-3">
