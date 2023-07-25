@@ -24,7 +24,7 @@ const dragonsSlice = createSlice({
       const dragonId = action.payload;
       const newState = state.dragons.map((dragon) => {
         if (dragon.id !== dragonId) { return dragon; }
-        return { ...dragon, reserved: true };
+        return { ...dragon, reserved: !dragon.reserved };
       });
       state.dragons = newState;
     },
