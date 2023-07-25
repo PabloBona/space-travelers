@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AllMissions, fetchMissions } from '../redux/missions/missionSlice';
 import '../style/missions.css';
 
-export const Missions = () => {
+const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector(AllMissions);
 
