@@ -2,9 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const formattedRocketData = (data) => data.map((rocket) => ({
   id: rocket.id,
-  rocketname: rocket.rocket_name,
-  type: rocket.rocket_type,
-  image: rocket.flickr_images[0],
+  rocketName: rocket.rocket_name,
+  description: rocket.description,
+  imageRocket: rocket.flickr_images[0],
 }));
 
 export const getRocketData = createAsyncThunk('rockets/getRocketData', async () => {
