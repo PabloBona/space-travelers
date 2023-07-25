@@ -1,7 +1,14 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const Mission = ({ mission }) => {
-  const { id, name, description, reserved } = mission;
+  const {
+    id,
+    name,
+    description,
+    reserved,
+  } = mission;
 
   return (
     <>
@@ -14,6 +21,15 @@ const Mission = ({ mission }) => {
       </td>
     </>
   );
+};
+
+Mission.propTypes = {
+  mission: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    reserved: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default Mission;
