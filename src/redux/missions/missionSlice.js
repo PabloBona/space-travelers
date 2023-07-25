@@ -33,7 +33,12 @@ const missionsSlice = createSlice({
       })
       .addCase(fetchMissions.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.missions = action.payload;
+        state.missions = action.payload.map(({ mission_id, mission_name, description }) => ({
+          id: mission_id,
+          name: mission_name,
+          description,
+          reserved: false,
+        }));
       })
       .addCase(fetchMissions.rejected, (state, action) => {
         state.isLoading = false;
