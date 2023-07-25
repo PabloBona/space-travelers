@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Button } from 'react-bootstrap';
+import { Button, Badge } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { reserveMission } from '../../redux/missions/missionSlice';
 
@@ -21,7 +21,13 @@ const Mission = ({ mission }) => {
     <>
       <td>{name}</td>
       <td className="description">{description}</td>
-      <td>Not a Member / Active Member</td>
+      <td>
+        {reserved ? (
+          <Badge bg="success">Active Member</Badge>
+        ) : (
+          <Badge bg="secondary">Not A Member</Badge>
+        )}
+      </td>
       <td>
         {reserved ? (
           <Button variant="outline-danger" type="button" onClick={handleButtonClick}>
