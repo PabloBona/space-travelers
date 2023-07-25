@@ -1,27 +1,39 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/dragons.css';
+import { useDispatch } from 'react-redux';
+import { reserveDragon } from '../redux/dragons/dragonsSlice';
 
-const DragonCard = ({ dragon }) => (
-  <div className="dragon-card rounded my-3" key={dragon.id}>
-    <div className="row">
-      <div className="col-sm-12 col-md-5">
-        <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
-      </div>
-      <div className="col-sm-12 col-md-7">
-        <div className="py-3">
-          <h2 className="">
-            {dragon.name}
-          </h2>
+const DragonCard = ({ dragon }) => {
+  const dispatch = useDispatch();
+
+  const handleReserve = () => {
+    dispatch(reserveDragon(dragon.id));
+  };
+  return (
+    <div className="dragon-card rounded my-3" key={dragon.id}>
+      <div className="row">
+        <div className="col-sm-12 col-md-5">
+          <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
         </div>
-        <div className="">{dragon.description}</div>
-        <div className="py-3">
-          <button type="submit" className="btn btn-primary">Reserve Dragon</button>
+        <div className="col-sm-12 col-md-7">
+          <div className="py-3">
+            <h2 className="">
+              {dragon.name}
+            </h2>
+          </div>
+          <div className="">{dragon.description}</div>
+          <div className="py-3">
+
+            <button onClick={handleReserve} type="submit" className="btn btn-primary">Reserve Dragon</button>
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 DragonCard.propTypes = {
   dragon: PropTypes.shape({
