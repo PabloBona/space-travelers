@@ -22,16 +22,11 @@ const dragonsSlice = createSlice({
   reducers: {
     reserveDragon: (state, action) => {
       const dragonId = action.payload;
-      const dragonToReserve = state.dragons.find((dragon) => dragon.id === dragonId);
-      if (dragonToReserve) {
-        dragonToReserve.reserved = !dragonToReserve.reserved;
-      }
-      console.log(dragonToReserve);
-      // const newState = state.dragons.map((dragon) => {
-      //   if (dragon.id !== dragonId) { return dragon; }
-      //   return { ...dragon, reserved: true };
-      // });
-      // return newState;
+      const newState = state.dragons.map((dragon) => {
+        if (dragon.id !== dragonId) { return dragon; }
+        return { ...dragon, reserved: true };
+      });
+      state.dragons = newState;
     },
 
   },

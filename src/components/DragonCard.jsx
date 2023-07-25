@@ -25,9 +25,11 @@ const DragonCard = ({ dragon }) => {
           </div>
           <div className="">{dragon.description}</div>
           <div className="py-3">
-
-            <button onClick={handleReserve} type="submit" className="btn btn-primary">Reserve Dragon</button>
-
+            {!dragon.reserved ? (
+              <button onClick={handleReserve} type="submit" className="btn btn-primary">Reserve Dragon</button>
+            ) : (
+              <button onClick={handleReserve} type="submit" className="btn btn-danger">Cancel Dragon</button>
+            ) }
           </div>
         </div>
       </div>

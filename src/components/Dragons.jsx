@@ -11,8 +11,10 @@ const Dragons = () => {
   const error = useSelector((state) => state.dragons.error);
 
   useEffect(() => {
-    dispatch(fetchDragonsData());
-  }, [dispatch]);
+    if (!dragonsData.length) {
+      dispatch(fetchDragonsData());
+    }
+  });
 
   if (isLoading) {
     return (
