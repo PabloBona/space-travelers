@@ -34,7 +34,7 @@ const Missions = () => {
   }
 
   return (
-    <Table striped bordered hover className="missions-table">
+    <Table striped bordered hover>
       <thead>
         <tr>
           <th>Mission</th>
@@ -45,7 +45,7 @@ const Missions = () => {
       </thead>
       <tbody>
         {missions.map((mission) => (
-          <tr key={mission.id}>
+          <tr key={mission.id} className="p-8">
             <Mission mission={mission} />
           </tr>
         ))}

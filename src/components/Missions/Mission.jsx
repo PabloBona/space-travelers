@@ -19,16 +19,16 @@ const Mission = ({ mission }) => {
 
   return (
     <>
-      <td>{name}</td>
-      <td className="description">{description}</td>
-      <td>
+      <td className="fw-bold">{name}</td>
+      <td>{description}</td>
+      <td className="vertical-align">
         {reserved ? (
           <Badge bg="success">Active Member</Badge>
         ) : (
           <Badge bg="secondary">Not A Member</Badge>
         )}
       </td>
-      <td>
+      <td className="vertical-align">
         {reserved ? (
           <Button variant="outline-danger" type="button" onClick={handleButtonClick}>
             Leave Mission
