@@ -3,7 +3,7 @@ import {
   Route, Routes, NavLink,
 } from 'react-router-dom';
 import Dragons from './components/Dragons';
-import Missions from './components/Missions';
+import Missions from './components/Missions/Missions';
 import Rockets from './components/Rockets';
 import MyProfile from './components/MyProfile';
 import planet from './assets/images/planet.png';

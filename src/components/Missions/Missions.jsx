@@ -1,17 +1,37 @@
 import React, { useEffect } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Table, Alert, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { AllMissions, fetchMissions } from '../../redux/missions/missionSlice';
-import '../style/missions.css';
+import {
+  AllMissions,
+  fetchMissions,
+  getError,
+  getLoading,
+} from '../../redux/missions/missionSlice';
+import '../../style/missions.css';
 import Mission from './Mission';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector(AllMissions);
+  const loading = useSelector(getLoading);
+  const error = useSelector(getError);
 
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
+
+  if (loading) {
+    return <Spinner animation="border" role="status" />;
+  }
+
+  if (error) {
+    return (
+      <Alert variant="danger">
+        Error fetching missions:
+        {error}
+      </Alert>
+    );
+  }
 
   return (
     <Table striped bordered hover className="missions-table">
