@@ -34,3 +34,13 @@ img {
   padding: 5px 10px;
   color: white;
 }
+
+.alert-box {
+  width: 350px;
+  font-size: 32px;
+  color: white;
+  margin: 100px auto;
+  border: white 1px solid;
+  border-radius: 9px;
+  padding: 50px;
+}

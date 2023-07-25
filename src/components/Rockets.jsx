@@ -10,12 +10,13 @@ function Rockets() {
   useEffect(() => {
     dispatch(getRocketData());
   }, [dispatch]);
+
   if (isLoading) {
-    return <div>Loading...</div>; // Show a loader while fetching data
+    return <div className="alert-box">Loading data from API...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="alert-box">{error}</div>;
   }
 
   return (
