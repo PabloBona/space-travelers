@@ -14,7 +14,7 @@ const DragonCard = ({ dragon }) => {
   return (
     <div className="dragon-card rounded my-3" key={dragon.id}>
       <div className="row">
-        <div className="col-sm-12 col-md-5">
+        <div className="col-md-5 col-sm-12 d-flex justify-content-around">
           <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
         </div>
         <div className="col-sm-12 col-md-7">
