@@ -1,9 +1,9 @@
-.missions-table {
-  margin: 0 auto;
-  width: 95vw;
-  align-items: center;
+* {
+  scroll-behavior: smooth;
 }
 
-.description {
-  width: 62vw;
+.vertical-align {
+  vertical-align: middle;
+  text-align: center;
+  width: 8vw;
 }
