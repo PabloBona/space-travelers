@@ -2,23 +2,15 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  data: [],
+  dragons: [],
   isLoading: true,
   error: null,
 };
 
-export const fetchDragonsData = createAsyncThunk('dragons/fetchDragonsData', async () => {
+const fetchDragonsData = createAsyncThunk('dragons/fetchDragonsData', async () => {
   try {
     const response = await axios.get('https://api.spacexdata.com/v3/dragons');
-    const dragonsData = response.data.map((dragon) => ({
-      id: dragon.id,
-      name: dragon.name,
-      type: dragon.type,
-      flickr_images: dragon.flickr_images,
-      description: dragon.description,
-      first_flight: dragon.first_flight,
-    }));
-    return dragonsData;
+    return [...response.data];
   } catch (error) {
     throw new Error('Failed to fetch dragons data. Please try again later.');
   }
@@ -27,7 +19,17 @@ export const fetchDragonsData = createAsyncThunk('dragons/fetchDragonsData', asy
 const dragonsSlice = createSlice({
   name: 'dragons',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveDragon: (state, action) => {
+      const dragonId = action.payload;
+      const newState = state.dragons.map((dragon) => {
+        if (dragon.id !== dragonId) { return dragon; }
+        return { ...dragon, reserved: !dragon.reserved };
+      });
+      state.dragons = newState;
+    },
+
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchDragonsData.pending, (state) => {
@@ -37,7 +39,7 @@ const dragonsSlice = createSlice({
       .addCase(fetchDragonsData.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.data = action.payload;
+        state.dragons = action.payload;
       })
       .addCase(fetchDragonsData.rejected, (state, action) => {
         state.isLoading = false;
@@ -47,3 +49,5 @@ const dragonsSlice = createSlice({
 });
 
 export default dragonsSlice.reducer;
+export { fetchDragonsData };
+export const { reserveDragon } = dragonsSlice.actions;
