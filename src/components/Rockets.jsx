@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
 import '../style/rockets.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { getRocketData } from '../redux/rockets/rocketsSlice';
+import { getRocketData, reserveRocket } from '../redux/rockets/rocketsSlice';
 
 function Rockets() {
   const { rockets, isLoading, error } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
+
+  const handleButtonClick = (rocketId) => {
+    dispatch(reserveRocket(rocketId));
+  };
 
   useEffect(() => {
     dispatch(getRocketData());
@@ -29,8 +33,27 @@ function Rockets() {
             </div>
             <div className="rocket-description-container">
               <h3 className="rocket-name">{rocket.rocketName}</h3>
-              <p className="rocket-description">{rocket.description}</p>
-              <button type="button" className="booking-btn">BOOK ROCKET</button>
+              <div>
+                {rocket.isReserved && <samp>Reserved </samp>}
+                <p className="rocket-description">{rocket.description}</p>
+              </div>
+              {rocket.isReserved ? (
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={() => handleButtonClick(rocket.id)}
+                >
+                  Cancel Reservation
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="booking-btn"
+                  onClick={() => handleButtonClick(rocket.id)}
+                >
+                  BOOK ROCKET
+                </button>
+              )}
             </div>
           </li>
         ))}
