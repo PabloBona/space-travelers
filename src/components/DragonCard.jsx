@@ -3,13 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/dragons.css';
 import { useDispatch } from 'react-redux';
-import { reserveDragon } from '../redux/dragons/dragonsSlice';
+import { reserveDragon, updateReservedDragons } from '../redux/dragons/dragonsSlice';
 
 const DragonCard = ({ dragon }) => {
   const dispatch = useDispatch();
 
   const handleReserve = () => {
     dispatch(reserveDragon(dragon.id));
+    dispatch(updateReservedDragons());
   };
   return (
     <div className="dragon-card rounded my-3" key={dragon.id}>
