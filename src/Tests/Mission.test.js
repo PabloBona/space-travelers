@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
 import Mission from '../components/Missions/Mission';
 import missionsSlice from '../redux/missions/missionSlice';
 
@@ -67,17 +68,19 @@ describe('Mission', () => {
   });
 
   test('Renders reserved mission details correctly', () => {
-    render(
-      <Provider store={store}>
-        <table>
-          <tbody>
-            <tr>
-              <Mission mission={reservedTestMission} />
-            </tr>
-          </tbody>
-        </table>
-      </Provider>,
-    );
+    act(() => {
+      render(
+        <Provider store={store}>
+          <table>
+            <tbody>
+              <tr>
+                <Mission mission={reservedTestMission} />
+              </tr>
+            </tbody>
+          </table>
+        </Provider>,
+      );
+    });
 
     const missionName = screen.getByText(reservedTestMission.name);
     expect(missionName).toBeInTheDocument();

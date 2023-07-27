@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
 import Missions from '../components/Missions/Missions';
 import missionsSlice from '../redux/missions/missionSlice';
 
@@ -11,8 +12,6 @@ const store = configureStore({
     missions: missionsSlice,
   },
 });
-
-console.log(store)
 
 describe('Missions', () => {
   test('Component renders correctly', () => {
@@ -23,11 +22,13 @@ describe('Missions', () => {
   });
 
   test('Component has spinner and no error', () => {
-    render(
-      <Provider store={store}>
-        <Missions />
-      </Provider>,
-    );
+    act(() => {
+      render(
+        <Provider store={store}>
+          <Missions />
+        </Provider>,
+      );
+    });
 
     const spinner = screen.getByRole('status');
     expect(spinner).toBeInTheDocument();

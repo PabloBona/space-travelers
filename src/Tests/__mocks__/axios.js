@@ -4,12 +4,14 @@ const dragonsData = [
     name: 'Dragon 1',
     description: 'Dragon 1 description',
     flickr_images: ['image1.jpg'],
+    type: 'Dragon 1 type',
   },
   {
     id: 'dragon2',
     name: 'Dragon 2',
     description: 'Dragon 2 description',
     flickr_images: ['image2.jpg'],
+    type: 'Dragon 2 type',
   },
 ];
 

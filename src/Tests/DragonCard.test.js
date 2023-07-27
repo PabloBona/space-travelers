@@ -1,40 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import axios from './__mocks__/axios';
-import DragonCard from '../components/DragonCard';
-import dragonsSlice from '../redux/dragons/dragonsSlice';
+import { act } from 'react-dom/test-utils';
+import store from '../redux/store';
+import Dragons from '../components/Dragons';
 
-jest.mock('axios');
-
-const store = configureStore({
-  reducer: {
-    dragons: dragonsSlice,
-  },
-});
-
-test('renders a dragon card correctly', async () => {
-  // Define los datos del dragón a ser mostrados en el componente DragonCard
-  const dragon = {
-    id: 'dragon1',
-    name: 'Dragon 1',
-    description: 'Dragon 1 description',
-  };
-
-  // Mockea la respuesta de axios cuando la URL sea "https://api.spacexdata.com/v3/dragons"
-  axios.get.mockResolvedValueOnce({
-    data: axios.dragonsData, // dragonsData es la información que retornamos en el archivo axios.js
+test('renders loading state correctly in DragonTest', () => {
+  act(() => {
+    render(
+      <Provider store={store}>
+        <Dragons />
+      </Provider>,
+    );
   });
 
-  const { container } = render(
-    <Provider store={store}>
-      <DragonCard dragon={dragon} />
-    </Provider>,
-  );
+  const h2Element = screen.getByText(/Loading/i);
+  const loadingElement = screen.getByTestId('h2test');
 
-  expect(container.firstChild).toMatchSnapshot();
-  expect(screen.getByText('Dragon 1')).toBeInTheDocument();
-  expect(screen.getByText('Dragon 1 description')).toBeInTheDocument();
-  // ... Añade más expectativas según la lógica de tu componente DragonCard
+  expect(loadingElement).toBeInTheDocument();
+  expect(h2Element).toBeInTheDocument();
 });

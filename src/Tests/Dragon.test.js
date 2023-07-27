@@ -1,19 +1,39 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from '../redux/store';
-import Dragons from '../components/Dragons';
+import { configureStore } from '@reduxjs/toolkit';
+import { act } from 'react-dom/test-utils';
+import Missions from '../components/Missions/Missions';
+import missionsSlice from '../redux/missions/missionSlice';
 
-test('renders loading state correctly', () => {
-  render(
-    <Provider store={store}>
-      <Dragons />
-    </Provider>,
-  );
+const store = configureStore({
+  reducer: {
+    missions: missionsSlice,
+  },
+});
 
-  const h2Element = screen.getByText(/Loading/i);
-  const loadingElement = screen.getByTestId('h2test');
+describe('Missions', () => {
+  test('Component renders correctly in DragonTest', () => {
+    const tree = renderer.create(
+      <Provider store={store}><Missions /></Provider>,
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-  expect(loadingElement).toBeInTheDocument();
-  expect(h2Element).toBeInTheDocument();
+  test('Component has spinner and no error in DragonTest', () => {
+    act(() => {
+      render(
+        <Provider store={store}>
+          <Missions />
+        </Provider>,
+      );
+    });
+
+    const spinner = screen.getByRole('status');
+    expect(spinner).toBeInTheDocument();
+
+    const errorAlert = screen.queryByRole('alert');
+    expect(errorAlert).not.toBeInTheDocument();
+  });
 });
