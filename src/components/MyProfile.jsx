@@ -16,32 +16,26 @@ const MyProfile = () => {
         {/* From here  */}
         <div className="col-lg-4 col-md-4 col-sm-12">
           <h2 className="my-3 text-primary">My Rockets</h2>
-          <ul className="list-unstyled">
+          <ul className="list-group custom-list">
             {reservedMissions.map(({ id, name }) => (
-              <li className="border my-1 px-2 rounded" key={id}>
-                {name}
-              </li>
+              <li className="list-group-item" key={id}>{name}</li>
             ))}
           </ul>
         </div>
         {/* to here, we need to show Reserved Rockets (ALI) */}
         <div className="col-lg-4 col-md-4 col-sm-12">
           <h2 className="my-3 text-primary">My Missions</h2>
-          <ul className="list-unstyled">
+          <ul className="list-group custom-list">
             {reservedMissions.map(({ id, name }) => (
-              <li className="border my-1 px-2 rounded" key={id}>
-                {name}
-              </li>
+              <li className="list-group-item" key={id}>{name}</li>
             ))}
           </ul>
         </div>
         <div className="col-lg-4 col-md-4 col-sm-12">
           <h2 className="my-3 text-primary">My Dragons</h2>
-          <ul className="list-unstyled">
+          <ul className="list-group custom-list">
             {reservedDragons.map((dragon) => (
-              <li className="border my-1 px-2 rounded" key={dragon.id}>
-                {dragon.name}
-              </li>
+              <li className="list-group-item" key={dragon.id}>{dragon.name}</li>
             ))}
           </ul>
         </div>
