@@ -30,9 +30,22 @@
 <!-- PROJECT DESCRIPTION -->
 <br>
 
-# 📖 space-travelers (space-travelers) <a name="space-travelers"></a>
+# 📖 Space-travelers (space-travelers) <a name="space-travelers"></a>
 
- The Bookstore is a website that allows you to display a list of books, add a book and remove a book!ics.
+ In this project, we have built a web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions using real live data from the SpaceX API.
+
+# How it Works
+The Space Travelers' Hub consists of three main sections:
+
+# Rockets / Dragons
+The Rockets section displays a list of all available SpaceX rockets. Users can easily book each rocket by clicking the reservation button or cancel their previously made booking. If your team has three members, the Dragons section is also included with the same functionalities.
+
+# Missions
+In the Missions section, users can explore and join different space missions. The application fetches real-time data from the SpaceX API to provide accurate information about upcoming missions.
+
+# My Profile
+The My Profile section allows users to view their booking history and the missions they have joined. Users can also manage their profile settings and make changes as needed.
+
 <br>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
