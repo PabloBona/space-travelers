@@ -47,7 +47,7 @@ const Missions = () => {
       </thead>
       <tbody>
         {missions.map((mission) => (
-          <tr key={mission.id} className="p-8">
+          <tr key={mission.id}>
             <Mission mission={mission} />
           </tr>
         ))}
