@@ -17,8 +17,10 @@ const Missions = () => {
   const error = useSelector(getError);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (!missions.length) {
+      dispatch(fetchMissions());
+    }
+  }, [dispatch, missions]);
 
   if (loading) {
     return <Spinner animation="border" role="status" />;
