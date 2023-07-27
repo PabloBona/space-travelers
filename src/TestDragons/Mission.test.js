@@ -1,16 +1,43 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from '../redux/store';
-import Rockets from '../components/Rockets';
+import { configureStore } from '@reduxjs/toolkit';
+import Mission from '../components/Missions/Mission';
+import missionsSlice from '../redux/missions/missionSlice';
 
-test('renders loading state correctly', () => {
+const store = configureStore({
+  reducer: {
+    missions: missionsSlice,
+  },
+});
+
+const missionData = {
+  id: 'mission1',
+  name: 'Mission 1',
+  description: 'Mission 1 description',
+  reserved: false,
+};
+
+test('renders Mission component correctly', () => {
   render(
     <Provider store={store}>
-      <Rockets />
+      <table>
+        <tbody>
+          <tr>
+            <Mission mission={missionData} />
+          </tr>
+        </tbody>
+      </table>
     </Provider>,
   );
 
-  const loadingElement = screen.getByText(/Loading/i);
-  expect(loadingElement).toBeInTheDocument();
+  const nameElement = screen.getByText('Mission 1');
+  const descriptionElement = screen.getByText('Mission 1 description');
+  const statusElement = screen.getByText('Not A Member');
+  const buttonElement = screen.getByText('Join Mission');
+
+  expect(nameElement).toBeInTheDocument();
+  expect(descriptionElement).toBeInTheDocument();
+  expect(statusElement).toBeInTheDocument();
+  expect(buttonElement).toBeInTheDocument();
 });
