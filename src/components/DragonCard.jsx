@@ -1,22 +1,24 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../style/dragons.css';
 import { useDispatch } from 'react-redux';
-import { reserveDragon, updateReservedDragons } from '../redux/dragons/dragonsSlice';
+import { reserveDragon } from '../redux/dragons/dragonsSlice';
 
 const DragonCard = ({ dragon }) => {
   const dispatch = useDispatch();
 
   const handleReserve = () => {
     dispatch(reserveDragon(dragon.id));
-    dispatch(updateReservedDragons());
   };
   return (
     <div className="dragon-card rounded my-3" key={dragon.id}>
       <div className="row">
         <div className="col-md-5 col-sm-12 d-flex justify-content-around">
-          <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
+          {dragon.flickr_images && dragon.flickr_images.length > 0 ? (
+            <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
+          ) : (
+            <div>No image available</div>
+          )}
         </div>
         <div className="col-sm-12 col-md-7">
           <div className="py-3">
@@ -45,6 +47,7 @@ DragonCard.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 

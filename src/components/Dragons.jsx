@@ -21,7 +21,7 @@ const Dragons = () => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h2 className="align-items-center d-flex justify-content-center text-light vh-100">Loading...</h2>
+            <h2 data-testid="h2test" className="align-items-center d-flex justify-content-center text-light vh-100">Loading...</h2>
           </div>
         </div>
       </div>
