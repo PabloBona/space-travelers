@@ -3,155 +3,172 @@
 <div align="center">
   <img src="./src/assets/images/planet.png" alt="logo" width="140"  height="auto" />
 </div>
-
+ 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 SpaceX Travels ](#-spacex-travels-)
+- [📖 Space-Travelers](#space-travelers)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
+  - [💻 Getting Started ](#getting-started)
+    - [Install](#-install)
+    - [Usage](#-usage)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [👥 Authors ](#-authors-)
+  - [👥 Authors ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
-
+ 
 <!-- PROJECT DESCRIPTION -->
+<br>
 
-# 📖 SpaceX Travels <a name="about-project"></a>
+# 📖 space-travelers (space-travelers) <a name="space-travelers"></a>
 
-This is our Microverse **SpaceX Travels** site, created with React, Redux and CSS.
+ The Bookstore is a website that allows you to display a list of books, add a book and remove a book!ics.
+<br>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-<details>
-  <summary>React</summary>
-</details>
+The following stacks were used
 
-<details>
-  <summary>Redux</summary>
-</details>
-
-<details>
-  <summary>CSS</summary>
-</details>
-
-<details>
-<summary>GitFlow</summary>
+<details style="color:rgb(87, 247, 255);">
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+    <li><a href="hhttps://create-react-app.dev/">Create React App</a></li>
+ </ul>
 </details>
 
 <!-- Features -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Key Features <a name="key-features"></a>
 
-- **React**
-- **Redux**
-- **GitFlow**
+- **ReactJS library**
+- **Using JSX syntax**
+- **Unit test with jest**
+- **Boostrap**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### 🚀 Live Demo <a name="live-demo"></a>
+<a href="https://chipper-cheesecake-3c0e8e.netlify.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
+<br>
 
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-  - Code editor
-  - Node
+# 💻 Getting Started <a name="getting-started"></a>
 
 
+Clone this repository to your desired folder:
 
-### Setup
+Example commands:
 
-Clone this repository to your desired folder by opening the terminal and running the following command:
-
-```sh
+```bash
   git clone git@github.com:PabloBona/space-travelers.git
+```
+<br>
 
+# 📖 Install
+
+Install this project's dependencies with:
+```
+cd space-travelers
+npm install
 ```
 
+<br>
 
-### Install
+# 📖 Usage
 
-Install this project with:
+To run the project, execute the following command:
 
-```sh
-  npm install
-
+```bash
+ npm run start
 ```
 
-### Usage
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To run the project use the following command:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```sh
-  npm start
+<br>
 
+# Run tests
+
+```bash
+  npm test
 ```
 
-### Run tests
+<br>
 
-To run tests, run the following commands:
+# 📖 Run linterns tests
 
-  For CSS linter errors:
+If you follow the tutorial above to setup linters then you can run these tests
 
-```sh
+```$
+  npx hint .
+```
+
+```$
+  npx stylelint "**/*.scss"
+```
+
+or if you use css then run this instead of the latter command above
+
+```$
   npx stylelint "**/*.{css,scss}"
-
 ```
 
-  For ESLint linter errors:
+<br>
 
-```sh
-  npx eslint "**/*.{js,jsx}"
+# Available Scripts
 
-```
+In the project directory, you can run:
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
 ### Deployment
 
-Deployed by GitHub Pages.
+You can deploy this project using: GitHub Pages or Netlify
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+### 👥 Author <a name="authors"></a>
 
-👤 **Hajnalka Oltyan**
 
-- GitHub: [@hajnaloltyan](https://github.com/hajnaloltyan)
-- LinkedIn: [Hajnal Oltyan]](https://www.linkedin.com/in/hajnalka-oltyan/)
-
+- 👤 **Pablo Bonasera**   - GitHub: [@BonPa](https://github.com/PabloBona)
+ 
+- 👤 **Hajnalka Oltyan**  - GitHub: [@Hajnalka](https://github.com/hajnaloltyan)
+ 
+- 👤 **Ali Baba**         - GitHub: [@Ali Baba](https://github.com/Alibaba2023)
+ 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
-
 ## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Customizable notifications and alerts**
+- [ ] **Multilingual support**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,13 +178,15 @@ Deployed by GitHub Pages.
 
 Contributions, issues, and feature requests are welcome!
 
+Feel free to check the [issues page](https://github.com/PabloBona/space-travelers/issues).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please leave a star and a comment.
+If you like this project you can follow me on github for more.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,7 +194,17 @@ If you like this project please leave a star and a comment.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse to have this opportunity, and also thank you the code review team. 
+- We would like to express our heartfelt gratitude to Microvere for the invaluable learning experience they have provided. The supportive community, dedicated mentors, and remote collaboration opportunities have enhanced my technical skills and prepared me for real-world projects.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+
+- **Are the linters necessary?**
+
+  - It is a good practice to install and use them as they guide you towards best practice, but yes you can do without.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,6 +212,6 @@ I would like to thank Microverse to have this opportunity, and also thank you th
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/PabloBona/space-travelers/blob/feature/setup%26components/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
