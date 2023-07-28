@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions Component renders correctly in DragonTest 1`] = `
+<div
+  className="spinner-border"
+  role="status"
+/>
+`;

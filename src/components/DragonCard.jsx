@@ -13,14 +13,14 @@ const DragonCard = ({ dragon }) => {
   return (
     <div className="dragon-card rounded my-3" key={dragon.id}>
       <div className="row">
-        <div className="col-md-5 col-sm-12 d-flex justify-content-around">
+        <div className="col-md-3 col-sm-12 d-flex justify-content-around">
           {dragon.flickr_images && dragon.flickr_images.length > 0 ? (
             <img className="w-100" src={dragon.flickr_images[0]} alt={dragon.name} />
           ) : (
             <div>No image available</div>
           )}
         </div>
-        <div className="col-sm-12 col-md-7">
+        <div className="col-sm-12 col-md-9">
           <div className="py-3">
             <h2 className="">
               {dragon.name}

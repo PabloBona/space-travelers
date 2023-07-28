@@ -11,7 +11,7 @@ import planet from './assets/images/planet.png';
 function App() {
   return (
     <>
-      <nav className="bg-light border-bottom navbar navbar-expand-md navbar-light">
+      <nav className="bg-light border-bottom border-success navbar navbar-expand-md navbar-light">
         <div className="container">
           <div>
             <img src={planet} alt="planet" className="planet" />
@@ -40,7 +40,6 @@ function App() {
           </button>
         </div>
       </nav>
-
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />

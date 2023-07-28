@@ -78,7 +78,7 @@ The following stacks were used
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### 🚀 Live Demo <a name="live-demo"></a>
-<a href="https://chipper-cheesecake-3c0e8e.netlify.app/">Live Demo</a>
+<a href="https://lucent-biscuit-ea8dab.netlify.app/">Live Demo</a>
 
 <!-- GETTING STARTED -->
 <br>
