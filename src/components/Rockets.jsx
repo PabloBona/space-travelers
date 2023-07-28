@@ -25,40 +25,46 @@ function Rockets() {
 
   return (
     <div className="container">
-      <ul>
-        {rockets.map((rocket) => (
-          <li key={rocket.id} className="rocket-item">
-            <div className="rocket-image-container">
-              <img src={rocket.imageRocket} alt="rocket_image" className="rocket-image" key={rocket.id} />
-            </div>
-            <div className="rocket-description-container">
-              <h3 className="rocket-name">{rocket.rocketName}</h3>
-              <div>
-                {rocket.isReserved && <samp>Reserved </samp>}
-                <p className="rocket-description">{rocket.description}</p>
+      <div className="">
+
+        <ul className="list-unstyled">
+          {rockets.map((rocket) => (
+            <li className="row " key={rocket.id}>
+              <div className="col">
+                <img className="rocket-img" src={rocket.imageRocket} alt="rocket_image" key={rocket.id} />
               </div>
-              {rocket.isReserved ? (
-                <button
-                  type="button"
-                  className="cancel-btn"
-                  onClick={() => handleButtonClick(rocket.id)}
-                >
-                  Cancel Reservation
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className="booking-btn"
-                  onClick={() => handleButtonClick(rocket.id)}
-                >
-                  BOOK ROCKET
-                </button>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+              <div className="col">
+                <h3 className="rocket-name">{rocket.rocketName}</h3>
+                <div>
+                  {rocket.isReserved && <samp>Reserved </samp>}
+                  <p className="rocket-description">{rocket.description}</p>
+                </div>
+                <div className="col">
+                  {rocket.isReserved ? (
+                    <button
+                      type="button"
+                      className="btn btn-danger"
+                      onClick={() => handleButtonClick(rocket.id)}
+                    >
+                      Cancel Reservation
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="booking-btn"
+                      onClick={() => handleButtonClick(rocket.id)}
+                    >
+                      BOOK ROCKET
+                    </button>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+
   );
 }
 
