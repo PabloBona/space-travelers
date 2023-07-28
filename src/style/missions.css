@@ -1,0 +1,9 @@
+* {
+  scroll-behavior: smooth;
+}
+
+.vertical-align {
+  vertical-align: middle;
+  text-align: center;
+  width: 8vw;
+}
